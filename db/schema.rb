@@ -10,7 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170418034003) do
+ActiveRecord::Schema.define(version: 20170418053048) do
+
+  create_table "debates", force: :cascade do |t|
+    t.string   "topic"
+    t.string   "image"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "submissions", force: :cascade do |t|
+    t.integer  "debate_id"
+    t.string   "sub_type"
+    t.text     "content"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["debate_id"], name: "index_submissions_on_debate_id"
+    t.index ["user_id"], name: "index_submissions_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
 
-  root 'pages#home'  
+  resources :debates
+  resources :hellos
+  resources :debates do
+    resources :submissions
+  end
+  
+  root 'pages#home'
   get 'pages/contact'
 
   devise_for :users
