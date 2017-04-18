@@ -8,13 +8,21 @@
             <ul class="nav navbar-nav navbar-left">
                 <li><a href="/">Home</a>
                 </li>
-                <li><a href="/products">Products</a>
-                </li>
-                <li><a href="/about-us">About Us</a>
-                </li>
-                <li><a href="/contact">Contact Us</a>
+                <li><%= link_to 'Contact', 'pages/contact' %>
                 </li>
             </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <% if user_signed_in? %>
+              <li>
+              <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+              </li>
+            <% else %>
+              <li>
+              <%= link_to('Login', new_user_session_path)  %>
+              </li>
+            <% end %>
+            </ul>
         </div>
+
     </div>
 </div>
