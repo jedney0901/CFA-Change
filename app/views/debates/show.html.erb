@@ -1,36 +1,41 @@
-<p id="notice"><%= notice %></p>
-<% if flash.any? %>
-  <div id="error_explanation">
-    <ul>
-    <% flash.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-    </ul>
+  <p id="notice"><%= notice %></p>
+  <% if flash.any? %>
+    <div id="error_explanation">
+      <ul>
+        <% flash.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
     </div>
-<% end %>
+  <% end %>
+<div class="">
+  <p>
+    <strong>Topic:</strong>
+    <%= @debate.topic %>
+  </p>
 
-<p>
-  <strong>Topic:</strong>
-  <%= @debate.topic %>
-</p>
+  <p>
+    <strong>Image:</strong>
+    <%= @debate.image %>
+  </p>
 
-<p>
-  <strong>Image:</strong>
-  <%= @debate.image %>
-</p>
+  <p>
+    <strong>Description:</strong>
+    <%= @debate.description %>
+  </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @debate.description %>
-</p>
+  <%= link_to 'Edit', edit_debate_path(@debate) %> |
+  <%= link_to 'Back', debates_path %>
 
-<%= link_to 'Edit', edit_debate_path(@debate) %> |
-<%= link_to 'Back', debates_path %>
-
-<%= render 'submissions/form', submission: @submission %>
-
-<% @submissions.each do |submission| %>
-  <p><%= submission.user_id %></p>
-  <p><%= submission.content %></p>
-  <p><%= submission.created_at.strftime('%b %d, %Y') %></p>
-<% end %>
+  <%= render 'submissions/form', submission: @submission %>
+  </div>
+  <div class="container">
+    <div class="row">
+      <% @submissions.each_with_index do |sub| %>
+      <div class="col-md-5 col-md-offset-1 col-sm-3 submissioncard">
+          <h3><%= sub.user.email %></h3>
+          <%= sub.content %>
+      </div>
+      <% end %>
+    </div>
+  </div>
