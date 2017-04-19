@@ -1,4 +1,13 @@
 <p id="notice"><%= notice %></p>
+<% if flash.any? %>
+  <div id="error_explanation">
+    <ul>
+    <% flash.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+    </div>
+<% end %>
 
 <p>
   <strong>Topic:</strong>

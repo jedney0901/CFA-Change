@@ -38,7 +38,7 @@ class SubmissionsController < ApplicationController
         format.html { redirect_to @submission.debate, notice: 'Submission was successfully created.' }
         format.json { render :show, status: :created, location: @submission }
       else
-        format.html { render :new }
+        format.html { redirect_to :back, :flash => { :error => @submission.errors.full_messages.join(', ') } }
         format.json { render json: @submission.errors, status: :unprocessable_entity }
       end
     end
