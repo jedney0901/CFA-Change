@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
-  resources :profiles
+  resources :users do
+    resource :profiles
+  end
+
   resources :debates do
     resources :submissions
   end

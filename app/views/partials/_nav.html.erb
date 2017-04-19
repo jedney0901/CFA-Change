@@ -21,6 +21,15 @@
               <%= link_to('Login', new_user_session_path)  %>
               </li>
             <% end %>
+              <% if current_user.profile != nil %>
+              <li>
+              <%= link_to('View Profile', show_profiles_path, :method => :show) %>
+            </li>
+            <% else %>
+              <li>
+              <%= link_to('Create Profile', created_profiles_path, :method => :create) %>
+            </li>
+            <% end %>
             </ul>
         </div>
 
