@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Topic:</strong>
+  <%= @debate.topic %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @debate.image %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @debate.description %>
+</p>
+
+<%= link_to 'Edit', edit_debate_path(@debate) %> |
+<%= link_to 'Back', debates_path %>
+
+<%= render 'submissions/form', submission: @submission %>
+
+<% @submissions.each do |submission| %>
+  <p><%= submission.user_id %></p>
+  <p><%= submission.content %></p>
+  <p><%= submission.created_at.strftime('%b %d, %Y') %></p>
+<% end %>
