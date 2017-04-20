@@ -29,6 +29,8 @@ gem 'carrierwave'
 
 gem "rolify"
 
+gem "pundit"
+
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

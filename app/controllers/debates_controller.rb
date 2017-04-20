@@ -45,6 +45,8 @@ class DebatesController < ApplicationController
   # PATCH/PUT /debates/1
   # PATCH/PUT /debates/1.json
   def update
+    authorize @debate
+
     respond_to do |format|
       if @debate.update(debate_params)
         format.html { redirect_to @debate, notice: 'Debate was successfully updated.' }
