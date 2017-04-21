@@ -16,7 +16,11 @@
 
       <div class="col-md-3 bordered imagearea">
         <strong>Image:</strong>
-        <%= @debate.image %>
+        <% if @debate.image.present? %>
+          <%= image_tag @debate.image, class:"debateimage" %>
+        <% else %>
+          <img src="<%= asset_path 'default.png' %>" height='80%' width='80%' alt="default image">
+        <% end %>
       </div>
 
       <div class = "col-md-3 bordered">
