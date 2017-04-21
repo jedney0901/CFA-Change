@@ -1,8 +1,7 @@
-<%= form_for([@debate, submission]) do |f| %>
+<%= form_for([submission.debate, submission]) do |f| %>
   <% if submission.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(submission.errors.count, "error") %> prohibited this submission from being saved:</h2>
-
       <ul>
       <% submission.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -10,28 +9,20 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :debate_id %>
-    <%= f.hidden_field :debate_id, value: @debate.id%>
+<div class="container">
+  <div class="row submissioncontainer">
+    <div class="col-md-12">
+      <div class="col-md-9 field submissionfield">
+        <%= f.label :content %>
+        <%= f.text_area :content %>
+      </div>
+      <div class="field">
+        <%= f.hidden_field :sub_type, :value => submission.sub_type %>
+      </div>
+      <div class="col-md-3 actions">
+        <%= f.submit %>
+      </div>
+    </div>
+  <% end %>
   </div>
-
-  <div class="field">
-    <%= f.label :sub_type %>
-    <%= f.text_field :sub_type %>
-  </div>
-
-  <div class="field">
-    <%= f.label :content %>
-    <%= f.text_area :content %>
-  </div>
-
-  <!-- <div class="field">
-    <%= f.label :user_id %>
-    <%= f.text_field :user_id %>
-  </div> -->
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>

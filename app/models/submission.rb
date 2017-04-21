@@ -1,8 +1,11 @@
 class Submission < ApplicationRecord
   belongs_to :debate
   belongs_to :user
-  # validates :description, length: { maximum: 500 }
+  validates :content, length: { maximum: 500 }
   validate :total_submission, :on => :create
+  # validate :previous_submission, :on => :create
+  # validate :argument_turn, :on => :create
+
 
 
 private

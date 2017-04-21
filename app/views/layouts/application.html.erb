@@ -3,15 +3,16 @@
   <head>
     <title><%= yield :title %> | Basic</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <div class="container main-page-content <%= controller.controller_name %> ">
-    <%= render 'partials/nav' %>
-    <%= yield %>
+    <div class="container">
+      <div class="row">
+        <%= render 'partials/nav' %>
+        <%= yield %>
+      </div>
     </div>
   </body>
 </html>

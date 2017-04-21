@@ -16,6 +16,22 @@ class SubmissionsController < ApplicationController
   end
 
   # GET /submissions/new
+  def pro
+    @submission = Submission.new
+    @submission.user_id = current_user.id
+    @submission.sub_type = 'pro'
+    @submission.debate = Debate.find(params[:debate_id])
+    render :new
+  end
+
+  def con
+    @submission = Submission.new
+    @submission.user_id = current_user.id
+    @submission.sub_type = 'con'
+    @submission.debate = Debate.find(params[:debate_id])
+    render :new
+  end
+
   def new
     @submission = Submission.new
     @submission.user_id = current_user.id

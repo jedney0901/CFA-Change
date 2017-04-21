@@ -13,6 +13,8 @@ class DebatesController < ApplicationController
     @submission = Submission.new
     @debate = Debate.find(params[:id])
     @submissions = @debate.submissions
+    @pro_submissions = @debate.submissions.where(:sub_type => "pro")
+    @con_submissions = @debate.submissions.where(:sub_type => "con")
   end
 
   # GET /debates/new
@@ -29,7 +31,6 @@ class DebatesController < ApplicationController
   def create
     @debate = Debate.new(debate_params)
     @debate.user_id = current_user.id
-
 
     respond_to do |format|
       if @debate.save

@@ -2,11 +2,10 @@
   <% if debate.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(debate.errors.count, "error") %> prohibited this debate from being saved:</h2>
-
       <ul>
-      <% debate.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% debate.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
