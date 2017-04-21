@@ -9,9 +9,12 @@
   </head>
 
   <body>
-    <div class="container main-page-content <%= controller.controller_name %> ">
-    <%= render 'partials/nav' %>
-    <%= yield %>
+    <div class="container">
+      <div class="row">
+
+        <%= render 'partials/nav' %>
+        <%= yield %>
+      </div>
     </div>
   </body>
 </html>

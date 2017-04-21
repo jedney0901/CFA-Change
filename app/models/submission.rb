@@ -1,8 +1,9 @@
 class Submission < ApplicationRecord
   belongs_to :debate
   belongs_to :user
-  # validates :description, length: { maximum: 500 }
+  validates :content, length: { maximum: 500 }
   validate :total_submission, :on => :create
+  validate :previous_submission, :on => :create
 
 
 private
@@ -11,4 +12,10 @@ private
       errors.add(:base, "Total number of submissions has been complete")
     end
   end
+
+  # def previous_submission
+  #   if debate.submission.user_id.last == current_user
+  #     erros.add(:base, "It's not your go, wait for the other team!")
+  #   end
+  # end
 end

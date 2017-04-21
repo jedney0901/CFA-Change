@@ -10,28 +10,21 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :debate_id %>
-    <%= f.hidden_field :debate_id, value: @debate.id%>
+<div class="container">
+  <div class="row submissioncontainer">
+    <div class="col-md-12">
+      <div class="col-md-9 field submissionfield">
+        <%= f.label :content %>
+        <%= f.text_area :content %>
+      </div>
+      <div class="field">
+        <%#= f.label :sub_type %>
+        <%#= f.text_field :sub_type %>
+      </div>
+      <div class="col-md-3 actions">
+        <%= f.submit %>
+      </div>
+    </div>
+  <% end %>
   </div>
-
-  <div class="field">
-    <%= f.label :sub_type %>
-    <%= f.text_field :sub_type %>
-  </div>
-
-  <div class="field">
-    <%= f.label :content %>
-    <%= f.text_area :content %>
-  </div>
-
-  <!-- <div class="field">
-    <%= f.label :user_id %>
-    <%= f.text_field :user_id %>
-  </div> -->
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>

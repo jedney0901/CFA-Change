@@ -1,41 +1,66 @@
-  <p id="notice"><%= notice %></p>
-  <% if flash.any? %>
-    <div id="error_explanation">
-      <ul>
-        <% flash.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+<p id="notice"><%= notice %></p>
+<% if flash.any? %>
+  <div id="error_explanation">
+    <ul>
+      <% flash.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+<div class="container ">
+  <div class="row ">
+    <div class="col-md-12 bordered">
+
+      <div class="col-md-3 bordered imagearea">
+        <strong>Image:</strong>
+        <%= @debate.image %>
+      </div>
+
+      <div class = "col-md-3 bordered">
+        <strong>Topic:</strong>
+        <%= @debate.topic %><br>
+
+        <strong>Created by:</strong>
+        <%= @debate.user_id %>
+      </div>
+
+      <div class="col-md-6 bordered">
+          <strong>Description:</strong>
+          <%= @debate.description %>
+      </div>
+
     </div>
-  <% end %>
-<div class="">
-  <p>
-    <strong>Topic:</strong>
-    <%= @debate.topic %>
-  </p>
+  </div>
+</div>
 
-  <p>
-    <strong>Image:</strong>
-    <%= @debate.image %>
-  </p>
 
-  <p>
-    <strong>Description:</strong>
-    <%= @debate.description %>
-  </p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="btn btn-secondary bordered">
+        <%= link_to 'Change my debate topic', edit_debate_path(@debate), class: "btn btn-primary" %>
+        <%= link_to 'Back to debates', debates_path, class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+</div>
 
-  <%= link_to 'Edit', edit_debate_path(@debate) %> |
-  <%= link_to 'Back', debates_path %>
-
-  <%= render 'submissions/form', submission: @submission %>
+<div class="container bordered">
+  <div class="row bordered">
+    <%= render 'submissions/form', submission: @submission %>
+  </div>
+</div>
   </div>
   <div class="container">
     <div class="row">
-      <% @submissions.each_with_index do |sub| %>
-      <div class="col-md-5 col-md-offset-1 col-sm-3 submissioncard">
+      <div class="col-md-12">
+        <% @submissions.each_with_index do |sub| %>
+      <div class="col-md-5 col-sm-3 col-md-offset-1 submissioncard bordered <%#= paint_submission(@submussion.typeofsub) %>">
           <h3><%= sub.user.email %></h3>
           <%= sub.content %>
       </div>
       <% end %>
     </div>
   </div>
+</div>
