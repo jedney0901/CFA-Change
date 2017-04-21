@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  mount_uploader :image, AvatarUploader
   rolify
   has_one :profile
   after_create :assign_default_role
