@@ -1,8 +1,7 @@
-<%= form_for([@debate, submission]) do |f| %>
+<%= form_for([submission.debate, submission]) do |f| %>
   <% if submission.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(submission.errors.count, "error") %> prohibited this submission from being saved:</h2>
-
       <ul>
       <% submission.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -18,8 +17,7 @@
         <%= f.text_area :content %>
       </div>
       <div class="field">
-        <%#= f.label :sub_type %>
-        <%#= f.text_field :sub_type %>
+        <%= f.hidden_field :sub_type, :value => submission.sub_type %>
       </div>
       <div class="col-md-3 actions">
         <%= f.submit %>

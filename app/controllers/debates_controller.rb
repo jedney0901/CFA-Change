@@ -13,6 +13,8 @@ class DebatesController < ApplicationController
     @submission = Submission.new
     @debate = Debate.find(params[:id])
     @submissions = @debate.submissions
+    @pro_submissions = @debate.submissions.where(:sub_type => "pro")
+    @con_submissions = @debate.submissions.where(:sub_type => "con")
   end
 
   # GET /debates/new
@@ -75,6 +77,6 @@ class DebatesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def debate_params
-      params.require(:debate).permit(:topic, :image, :description, :user_id, :stance)
+      params.require(:debate).permit(:topic, :image, :description, :user_id)
     end
 end
