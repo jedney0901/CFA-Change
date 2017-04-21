@@ -1,6 +1,7 @@
 class Debate < ApplicationRecord
   has_many :submissions
   belongs_to :user
+  mount_uploader :image, AvatarUploader
 
   validates :description, length: { maximum: 500 }
 
@@ -18,4 +19,5 @@ class Debate < ApplicationRecord
       errors.add(:base, "It's not your go, wait for the other team!")
     end
   end
+
 end
