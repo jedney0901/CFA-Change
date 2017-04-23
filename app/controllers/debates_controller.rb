@@ -4,6 +4,7 @@ class DebatesController < ApplicationController
   # GET /debates
   # GET /debates.json
   def index
+    @user = User.all
     @debates = Debate.all
   end
 

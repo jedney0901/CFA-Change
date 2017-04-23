@@ -1,16 +1,77 @@
-<div class="">
+<div class="container">
+  <div class="row ">
+    <h2>Welcome <%= @user.email %></h2>
+    <div class="col-md-12">
+      <div class="col-md-4 profilebox ">
+        <table class = "table">
+          <thead>
+            <tr>
+              <th>Last 10 debates</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <!-- Note: Check out how to do a loop within the user controller for pulling the last 10 debates the user has commented on -->
+              <%# @debates.each do |debate| %>
+              <td><%#= debate.user.topic %></td>
+            </tr>
+            <%# end %>
+          </tbody>
+      </table>
+      </div>
+      <div class="col-md-4 profilebox ">
+        <table class = "table">
+          <thead>
+            <tr>
+              <th>Last 10 debates</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <!-- Note: Check out how to do a loop within the user controller for pulling the last 10 debates the user has commented on -->
+              <%# @debates.each do |debate| %>
+              <td><%#= debate.user.topic %></td>
+            </tr>
+            <%# end %>
+          </tbody>
+        </table>
+      </div>
 
+      <div class="col-md-4 profilebox ">
+        <h4>This will be a live feed of all recent submissions on debates I am apart of</h4>
+        <table class = "table">
+          <thead>
+            <tr>
+              <th>Last 10 debates</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <!-- Note: Check out how to do a loop within the user controller for pulling the last 10 debates the user has commented on -->
+              <%# @debates.each do |debate| %>
+              <td><%#= debate.user.topic %></td>
+            </tr>
+            <%# end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 </div>
 
-<h2>Welcome <%= @user.email %></h2>
-
 <div class="container">
-  <div class="col-md-12">
-    <div class="col-md-3 profilebox bordered">
-      <%= render 'partials/editprofile' %>
-    </div>
-    <div class="col-md-3">
-      <%= link_to "Back", :back, class: 'btn btn-default' %>
+  <div class="row ">
+    <div class="col-md-12 ">
+      <div class="col-md-4  profilebox">
+        <%#= render 'partials/editprofile' %>
+      </div>
+      <div class="col-md-4 profilebox ">
+        This is where the votecompass API will go
+
+      </div>
+      <div class="col-md-4 profilebox ">
+        This is where the newsfeed goes
+      </div>
     </div>
   </div>
 </div>
