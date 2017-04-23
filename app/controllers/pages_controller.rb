@@ -4,4 +4,9 @@ class PagesController < ApplicationController
 
   def contact
   end
+
+  def admin_dashboard
+    @debates = Debates.all
+  end
+
 end
