@@ -2,11 +2,11 @@
 
 <h1>Debates</h1>
 
-<table>
+<table class = "table">
   <thead>
     <tr>
-      <th>Topic</th>
       <th>Image</th>
+      <th>Topic</th>
       <th>Description</th>
       <th colspan="3"></th>
     </tr>
@@ -15,12 +15,16 @@
   <tbody>
     <% @debates.each do |debate| %>
       <tr>
-        <td><%= debate.topic %></td>
-        <td><%= debate.image %></td>
-        <td><%= debate.description %></td>
-        <td><%= link_to 'Show', debate %></td>
-        <td><%= link_to 'Edit', edit_debate_path(debate) %></td>
-        <td><%= link_to 'Destroy', debate, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if debate.image.present? %>
+        <td class = "debateimage2"><%= image_tag debate.image, class:"debateimage2" %></td>
+        <% else %>
+        <td><img src="<%= asset_path 'default.png', class: 'debateimage2' %>" class = "debateimage2" alt="default image"></td>
+        <% end %>
+        <td class = "debatetable"><%= link_to debate.topic, debate_path(id: debate) %></td>
+        <td class = "debatetable"><%= debate.description %></td>
+        <td class = "debatetable"><%= link_to 'Show', debate %></td>
+        <td class = "debatetable"><%= link_to 'Edit', edit_debate_path(debate) %></td>
+        <td class = "debatetable"><%= link_to 'Destroy', debate, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

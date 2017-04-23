@@ -10,26 +10,29 @@
   align-self: center;
 }
 
-// .submissioncard {
-//   background: #E85657;
-//   background-color: #E85657;
-//   height: 100px;
-//   border-radius: 10px;
-//
-// }
-// .submissioncard:nth-of-type(odd) {
-//   background: blue;
-//   background-color: blue;
-// }
 
+.debateimage {
+  height: 180px;
+  width:180px;
+}
+
+.debateimage2 {
+  height: 100px;
+  width:100px;
+}
 
 .pro {
 
-  background: blue;
-  background-color: blue;
+  background: #447AE1;
+  background-color: #447AE1;
 }
 
 .con {
   background: #E85657;
   background-color: #E85657;
+}
+
+.debatetable {
+  height: 100px;
+
 }

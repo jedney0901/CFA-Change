@@ -32,11 +32,6 @@ class SubmissionsController < ApplicationController
     render :new
   end
 
-  def new
-    @submission = Submission.new
-    @submission.user_id = current_user.id
-  end
-
   # GET /submissions/1/edit
   def edit
   end
