@@ -2,6 +2,14 @@
 
 <h1>Debates</h1>
 
+<%= search_form_for @search do |f| %>
+  <div class="field">
+    <%= f.label :topic_cont, "Debate keyword" %>
+    <%= f.text_field :topic_cont %>
+  </div>
+  <div class="actions"><%= f.submit "Search" %></div>
+  <% end %>
+
 <table class = "table">
   <thead>
     <tr>
