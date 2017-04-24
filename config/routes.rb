@@ -15,6 +15,9 @@ Rails.application.routes.draw do
 
   root 'pages#home'
 
+  get 'contact', to: "contact#index"
+  post 'contact', to: "contact#mail"
+
   get 'contact', to: "pages#contact"
   get 'admindashboard', to: "pages#admin_dashboard"
 
