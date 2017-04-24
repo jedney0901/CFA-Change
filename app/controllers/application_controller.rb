@@ -17,7 +17,6 @@ protected
       :password_confirmation, :current_password, :image, :image_cache, :remove_image) }
   end
 
-
   private
 
     def user_not_authorized

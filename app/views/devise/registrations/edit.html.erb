@@ -6,33 +6,37 @@
         <table class="table">
           <thead>
             <tr>
-              <th>Last 10 debates</th>
+              <th>Last 10 debates generated</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <!-- Note: Check out how to do a loop within the user controller for pulling the last 10 debates the user has commented on -->
-              <%# @debates.each do |debate| %>
-              <td><%#= debate.user.topic %></td>
+              <!-- Note: Check out how to do a loop within the user controller for pulling the last 10 debates for that user -->
+              <% @user.debates.each do |debate| %>
+              <td><%= debate.topic %></td>
             </tr>
-            <%# end %>
+            <% end %>
           </tbody>
-      </table>
+        </table>
       </div>
       <div class="col-md-4 profilebox">
-        <table class"table">
+        <table class="table">
           <thead>
             <tr>
-              <th>Last 10 debates</th>
+              <th>Last 10 debates generated</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <!-- Note: Check out how to do a loop within the user controller for pulling the last 10 debates the user has commented on -->
-              <%# @debates.each do |debate| %>
-              <td><%#= debate.user.topic %></td>
+              <!-- Note: Check out how to do a loop within the user controller for pulling the last 10 debates they are following -->
+              <% @user.debates.each do |debate| %>
+              <% if debate.present? %>
+              <td><%= debate.topic %></td>
+              <% else %>
+              <td><%= puts "Come and join in some debates" %></td>
+              <% end %>
             </tr>
-            <%# end %>
+            <% end %>
           </tbody>
         </table>
       </div>
@@ -42,22 +46,21 @@
         <table class="table">
           <thead>
             <tr>
-              <th>Last 10 debates</th>
+              <th>My recent debate submissions</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <!-- Note: Check out how to do a loop within the user controller for pulling the last 10 debates the user has commented on -->
-              <%# @debates.each do |debate| %>
-              <td><%#= debate.user.topic %></td>
+              <% @user.submissions.each do |submission| %>
+              <td><%= submission.content  %></td>
             </tr>
-            <%# end %>
+            <% end %>
           </tbody>
         </table>
       </div>
     </div>
   </div>
-</div>
 
 <div class="container">
   <div class="row">
@@ -65,9 +68,11 @@
       <div class="col-md-4 profilebox">
         <%= render 'partials/editprofile' %>
       </div>
+
       <div class="col-md-4 profilebox votecompass">
         This is where the votecompass API will go
       </div>
+
       <div class="col-md-4 profilebox">
         This is where the newsfeed goes
       </div>
