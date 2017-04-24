@@ -2,8 +2,8 @@
   <div class="row ">
     <h2>Welcome <%= @user.email %></h2>
     <div class="col-md-12">
-      <div class="col-md-4 profilebox ">
-        <table class = "table">
+      <div class="col-md-4 profilebox">
+        <table class="table">
           <thead>
             <tr>
               <th>Last 10 debates</th>
@@ -19,8 +19,8 @@
           </tbody>
       </table>
       </div>
-      <div class="col-md-4 profilebox ">
-        <table class = "table">
+      <div class="col-md-4 profilebox">
+        <table class"table">
           <thead>
             <tr>
               <th>Last 10 debates</th>
@@ -37,9 +37,9 @@
         </table>
       </div>
 
-      <div class="col-md-4 profilebox ">
-        <h4>This will be a live feed of all recent submissions on debates I am apart of</h4>
-        <table class = "table">
+      <div class="col-md-4 profilebox">
+        <!-- <h4>This will be a live feed of all recent submissions on debates I am apart of</h4> -->
+        <table class="table">
           <thead>
             <tr>
               <th>Last 10 debates</th>
@@ -60,18 +60,17 @@
 </div>
 
 <div class="container">
-  <div class="row ">
-    <div class="col-md-12 ">
-      <div class="col-md-4  profilebox">
-        <%#= render 'partials/editprofile' %>
-      </div>
-      <div class="col-md-4 profilebox ">
-        This is where the votecompass API will go
+  <div class="row">
 
+      <div class="col-md-4 profilebox">
+        <%= render 'partials/editprofile' %>
       </div>
-      <div class="col-md-4 profilebox ">
+      <div class="col-md-4 profilebox votecompass">
+        This is where the votecompass API will go
+      </div>
+      <div class="col-md-4 profilebox">
         This is where the newsfeed goes
       </div>
-    </div>
+
   </div>
 </div>

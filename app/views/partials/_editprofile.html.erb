@@ -44,7 +44,7 @@
           </div>
 
           <% if current_user.image.url.present? %>
-            <%= image_tag(current_user.image.url) %>
+            <%= image_tag(current_user.image.url, :class => 'thumbnail') %>
             <%= f.label :remove_image do %>
               <%= f.check_box :remove_image %>
             <% end %>
@@ -69,4 +69,3 @@
 
       </div>
   </div>
-</div>
