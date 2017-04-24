@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Topic</th>
+            <th>Content</th>
+            <th>Total number of submissions</th>
+          </tr>
+        </thead>
+        <tbody>
+      		<% @debates.each do |debate| %>
+      				<tr>
+      	        <td><%= debate.topic %></td>
+      	        <td><%= debate.description %></td>
+                <td><%= debate.submissions.count %></td>
+      	      </tr>
+      		<% end %>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-6">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>User email</th>
+            <th>Total amount of debates started by user</th>
+            <th>Total number of submissions per user</th>
+          </tr>
+        </thead>
+        <tbody>
+            <% @users.each do |user| %>
+            <% @debates.each do |debate| %>
+
+                <tr>
+                  <td><%= user.email %></td>
+                  <td><%= debate.submissions.count.where (user:{user_id = current_user.id})  %></td>
+                </tr>
+            <% end %>
+           <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

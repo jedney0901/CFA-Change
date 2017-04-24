@@ -4,4 +4,10 @@ class PagesController < ApplicationController
 
   def contact
   end
+
+  def admin_dashboard
+    @debates = Debate.all
+    @users = User.all
+  end
+
 end
