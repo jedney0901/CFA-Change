@@ -37,6 +37,8 @@ gem "rolify"
 
 gem "pundit"
 
+gem 'ransack'
+
 gem 'mini_magick'
 
 # Use jquery as the JavaScript library
