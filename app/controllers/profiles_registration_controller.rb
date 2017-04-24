@@ -8,4 +8,8 @@ class ProfilesRegistrationController < Devise::RegistrationsController
     edit_user_registration_path
   end
 
+  def user_home(resource)
+    @debates = current_user.debates
+    @submissions = current_user.submissions
+  end
 end
