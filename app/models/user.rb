@@ -3,6 +3,8 @@ class User < ApplicationRecord
   rolify
   has_one :profile
   has_many :debates
+
+  has_many :submissions
   after_create :assign_default_role
 
   # Include default devise modules. Others available are:

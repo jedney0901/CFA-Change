@@ -10,10 +10,8 @@ Rails.application.routes.draw do
   end
 
   resources :conversations do
-  resources :messages
+    resources :messages
   end
-
-
 
   root 'pages#home'
 
@@ -23,10 +21,9 @@ Rails.application.routes.draw do
   get 'contact', to: "pages#contact"
   get 'admindashboard', to: "pages#admin_dashboard"
 
-
   devise_for :users, controllers: {
     omniauth_callbacks: "callbacks",
-    registrations: "my_devise/registrations/profiles_registration", 
+    registrations: "profiles_registration", 
   }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
