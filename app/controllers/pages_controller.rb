@@ -6,7 +6,8 @@ class PagesController < ApplicationController
   end
 
   def admin_dashboard
-    @debates = Debates.all
+    @debates = Debate.all
+    @users = User.all
   end
 
 end
