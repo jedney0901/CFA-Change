@@ -5,7 +5,8 @@ class DebatesController < ApplicationController
   # GET /debates.json
   def index
     @user = User.all
-    @debates = Debate.all
+    @search = Debate.search(params[:q])
+    @debates = @search.result
   end
 
   # GET /debates/1

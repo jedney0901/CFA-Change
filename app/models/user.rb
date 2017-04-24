@@ -3,15 +3,30 @@ class User < ApplicationRecord
   rolify
   has_one :profile
   has_many :debates
+  has_many :submissions
   after_create :assign_default_role
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook]
+
+         def self.from_omniauth(auth)
+           where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+             user.provider = auth.provider
+             user.uid = auth.uid
+             user.email = auth.info.email
+             user.password = Devise.friendly_token[0,20]
+           end
+         end
+
+         def admin?
+           has_role?(:admin)
+         end
 
 
-  def assign_default_role
-    self.add_role(:newuser) if self.roles.blank?
-  end
+
+  # def assign_default_role
+  #   self.add_role(:newuser) if self.roles.blank?
+  # end
 end

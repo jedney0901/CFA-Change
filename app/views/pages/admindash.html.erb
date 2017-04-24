@@ -1,0 +1,25 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Topic</th>
+      <th>Content</th>
+      <th>Date Created</th>
+    </tr>
+  </thead>
+  <tbody>
+		<% 10.@rooms.each do |room| %>
+			<% room.bookings.each do |booking| %>
+				<tr>
+	        <td><%= booking.start_date %></td>
+	        <td><%= booking.end_date %></td>
+	        <td><%= booking.room.title %></td>
+	        <td><%= number_to_currency(booking.room.price) %></td>
+	        <td><%= booking.created_at %></td>
+	        <td><%= booking.guest_number %></td>
+	        <td><%= yes_no(booking.approved) %></td>
+	        <td><%= link_to 'Edit', edit_booking_path(booking) %></td>
+	      </tr>
+			<% end %>
+		<% end %>
+  </tbody>
+</table>
