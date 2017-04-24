@@ -17,7 +17,8 @@ Rails.application.routes.draw do
 
   root 'pages#home'
 
-  get 'contact', to: "pages#contact"
+  get 'contact', to: "contact#index"
+  post 'contact', to: "contact#mail"
 
 
   devise_for :users, controllers: { registrations: "profiles_registration"}
