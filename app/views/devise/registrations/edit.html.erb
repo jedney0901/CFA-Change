@@ -1,6 +1,26 @@
 <div class="container">
-  <div class="row ">
+  <div class="row">
     <h2>Welcome <%= @user.email %></h2>
+
+    <div class="col-md-4">
+
+      <img src="<%= asset_path 'votecompass2.jpg' %>" alt="" height="300px;">
+
+    </div>
+
+    <div class="col-md-8">
+      <strong>What is my votecompass?</strong>
+      <div class="">
+        <br>Vote Compass is an online educational tool that promotes electoral literacy and democratic engagement. The tool allows users to receive information regarding the positions of political parties or candidates for office during a given election.
+      </div>
+      <div class="">
+        <br>You can learn more or update your Votecompass at <a href="https://votecompass.abc.net.au/">https://votecompass.abc.net.au/</a>
+      </div>
+      <br>
+      <%= render 'partials/editprofile' %>
+    </div>
+  </div>
+  <div class="row ">
     <div class="col-md-12">
       <div class="col-md-4 profilebox">
         <table class="table">
@@ -23,7 +43,7 @@
         <table class="table">
           <thead>
             <tr>
-              <th>Last 10 debates generated</th>
+              <th>All of my debates</th>
             </tr>
           </thead>
           <tbody>
@@ -31,7 +51,7 @@
               <!-- Note: Check out how to do a loop within the user controller for pulling the last 10 debates they are following -->
               <% @user.debates.each do |debate| %>
               <% if debate.present? %>
-              <td><%= debate.topic %></td>
+              <td> <strong>Topic:</strong> <%= debate.topic %> <br> <strong>Description: </strong><%= debate.description %></td>
               <% else %>
               <td><%= puts "Come and join in some debates" %></td>
               <% end %>
@@ -59,23 +79,11 @@
           </tbody>
         </table>
       </div>
+
     </div>
   </div>
-
-<div class="container">
-  <div class="row">
-
-      <div class="col-md-4 profilebox">
-        <%= render 'partials/editprofile' %>
-      </div>
-
-      <div class="col-md-4 profilebox votecompass">
-        This is where the votecompass API will go
-      </div>
-
-      <div class="col-md-4 profilebox">
-        This is where the newsfeed goes
-      </div>
-
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+    </div>
   </div>
 </div>

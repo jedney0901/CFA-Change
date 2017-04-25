@@ -1,37 +1,93 @@
 <% provide(:home, "active") %>
 <% provide(:title, "home") %>
 
-<div class="container">
+
+<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+<header class="intro-header" style="background-image: url('assets/ThinkFaster-FTR.jpg')">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>You Polly</h1>
+                    <span class="subheading subtext">Figure out who you are and what you stand for</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<!-- Cirlce Starts -->
+<div id="about"  class="container about">
+  <h2 class="text-center wowload fadeInUp">STAND UP AND HAVE YOUR VOICE HEARD</h2>
   <div class="row">
-    <div class="col-md-12 main-image bordered">
-
+    <div class="col-sm-4 wowload fadeInLeft">
+      <h4><i class="fa fa-paint-brush"></i> Political Identity</h4>
+      <p>The ChangeApp is inspired to give back the youth of Australia their political identity to understand and be apart of the political sphere. As an add on to the political app Votecompass we aim to provide a place for you to identify, reason and develop your own political understandings through interaction and fact checking.</p>
     </div>
-  <div class="row">
-    <div class="col-md-12 ">
-      <div class="col-md-4 articlebox bordered">
-
-      </div>
-      <div class="col-md-4 articlebox bordered">
-      </div>
-
-      <div class="col-md-4 articlebox bordered">
-
-      </div>
+    <div class="col-sm-4 wowload fadeInRight">
+      <h4><i class="fa fa-code"></i> Breakout of the fake news social world</h4>
+      <p>As social media consistently seems to become a source of news, it's important to realise that you may be served up information that is designed to agree with you. ChangeApp provides you the ability to collaborate and pull together responses based </p>
     </div>
-  </div>
-  <div class="row">
-  <div class="col-md-12 articlebox bordered">
-    <div class="col-md-4 articlebox bordered">
-
-    </div>
-    <div class="col-md-4 articlebox bordered">
-
-    </div>
-    <div class="col-md-4 articlebox bordered">
-
-    </div>
-  </div>
-
+    <div class="col-sm-4 wowload fadeInRight">
+      <h4><i class="fa fa-code"></i> Frontend & Backend Development</h4>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipxsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
     </div>
   </div>
 </div>
+<!-- #Cirlce Ends -->
+
+
+        <!-- works -->
+        <div id="works"  class=" clearfix grid">
+          <h2>Featured Articles</h2>
+            <figure class="effect-oscar  wowload fadeIn">
+              <img src="<%= asset_path 'homeless.jpg' %>" alt="img01"/>
+                <figcaption>
+                    <h2>Homeless Youth</h2>
+                    <p>Homeless Youth Unemployment Is Nine Times The National Average<br>
+                    <a href="http://www.huffingtonpost.com.au/2017/04/04/homeless-youth-unemployment-is-nine-times-the-national-average_a_22026299/" title="" data-gallery>View more</a></p>
+                </figcaption>
+            </figure>
+             <figure class="effect-oscar  wowload fadeInUp">
+                <img src="<%= asset_path 'Aboriginal-flag.jpg' %>" alt="img01"/>
+                <figcaption>
+                    <h2>The Great Depression</h2>
+                    <p>Mental illness continues to plague young Indigenous people<br>
+                    <a href="<%= asset_path 'ThinkFaster-FTR.jpg' %>" title="1" data-gallery>View more</a></p>
+                </figcaption>
+            </figure>
+             <figure class="effect-oscar  wowload fadeInUp">
+                <img src="<%= asset_path 'avocado.jpg' %>" alt="img01"/>
+                <figcaption>
+                    <h2>Youth and Politics</h2>
+                    <p>Why Australia's Youth And Political Parties Aren't Talking<br>
+                    <a href="http://www.huffingtonpost.com.au/2016/10/21/why-australias-youth-and-political-parties-arent-talking/" title="1" data-gallery>View more</a></p>
+                </figcaption>
+            </figure>
+             <figure class="effect-oscar  wowload fadeInUp">
+                <img src="<%= asset_path 'education.jpg' %>" alt="img01"/>
+                <figcaption>
+                    <h2>Education</h2>
+                    <p>Federal government shifts it's focus to helping change higher education with larger funding for STEM programs.<br>
+                    <a href="http://www.themercury.com.au/news/opinion/talking-point-an-investment-in-a-better-future/news-story/70e6477dae0702cafd48677e2274a06e" title="1" data-gallery>View more</a></p>
+                </figcaption>
+            </figure>
+            <figure class="effect-oscar  wowload fadeInUp">
+               <img src="<%= asset_path 'Housing.jpg' %>" alt="img01"/>
+               <figcaption>
+                   <h2>Housing Affordability</h2>
+                   <p>How will the government help young first home buyers get into the market?<br>
+                   <a href="http://www.theaustralian.com.au/national-affairs/treasury/scott-morrisons-cradletograve-housing-plan/news-story/2ada2e09bbeaf8bcda6fc513d35b4081" title="1" data-gallery>View more</a></p>
+               </figcaption>
+           </figure>
+             <figure class="effect-oscar  wowload fadeInUp">
+                <img src="<%= asset_path 'LGBTIFLAG.jpg' %>" alt="img01"/>
+                <figcaption>
+                    <h2>LGBTI Community</h2>
+                    <p>With programs like Safe Schools being terminated how can we help the LGBTI Community<br>
+                    <a href="http://www.theaustralian.com.au/national-affairs/education/safe-schools-antibully-project-to-lose-tasmania-funding/news-story/edf86542522560f86061f7fa209fe67d" title="1" data-gallery>View more</a></p>
+                </figcaption>
+            </figure>
+        </div>

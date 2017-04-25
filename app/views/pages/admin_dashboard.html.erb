@@ -6,7 +6,7 @@
           <tr>
             <th>Topic</th>
             <th>Content</th>
-            <th>Total number of submissions</th>
+            <th>Total submissions</th>
           </tr>
         </thead>
         <tbody>
@@ -24,20 +24,26 @@
       <table class="table">
         <thead>
           <tr>
-            <th>User email</th>
-            <th>Total amount of debates started by user</th>
-            <th>Total number of submissions per user</th>
+            <th class="col-md-2">User email</th>
+            <th class="col-md-1">Debates per user</th>
+            <th class="col-md-3">Submissions per user</th>
           </tr>
         </thead>
         <tbody>
-            <% @users.each do |user| %>
-            <% @debates.each do |debate| %>
+          <% @debates.map(&:user).uniq.each do |debate| %>
+
+
+            <% @users.map().uniq.each do |user| %>
+            <% @submissions.map.uniq.each do |submission| %>
 
                 <tr>
                   <td><%= user.email %></td>
-                  <td><%= debate.submissions.count.where (user:{user_id = current_user.id})  %></td>
+                  <td><%= user.debates.count %></td>
+
+                  <td><%#= user.submission.count %></td>
                 </tr>
             <% end %>
+           <% end %>
            <% end %>
         </tbody>
       </table>

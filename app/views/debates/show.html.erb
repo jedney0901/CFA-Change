@@ -1,3 +1,6 @@
+<% provide(:debates, "active") %>
+<% provide(:title, "Debates") %>
+
 <p id="notice"><%= notice %></p>
 <% if flash.any? %>
   <div id="error_explanation">
@@ -10,69 +13,71 @@
 <% end %>
 
 <!-- Containers and debate array display. -->
-<div class="container ">
-  <div class="row ">
-    <div class="col-md-12 bordered">
+<div class="container-fluid">
+  <div class="row debateinformation">
+    <div class="col-md-3 imagearea">
+      <% if @debate.image.present? %>
+        <%= image_tag @debate.image, class:"debateimage" %>
+      <% else %>
+        <img src="<%= asset_path 'ThinkFaster-FTR.jpg' %>" class="debateimage" alt="default image">
+      <% end %>
+    </div>
 
-      <div class="col-md-3 bordered imagearea">
-        <strong>Image:</strong>
-        <% if @debate.image.present? %>
-          <%= image_tag @debate.image, class:"debateimage" %>
-        <% else %>
-          <img src="<%= asset_path 'default.png' %>" height='80%' width='80%' alt="default image">
-        <% end %>
-      </div>
+    <div class = "col-md-3">
+      <strong>Topic:</strong>
+      <%= @debate.topic %><br>
+      <strong>Created by:</strong>
+      <%= @debate.user.email %>
+    </div>
 
-      <div class = "col-md-3 bordered">
-        <strong>Topic:</strong>
-        <%= @debate.topic %><br>
+    <div class="col-md-6">
+        <strong>Description:</strong>
+        <%= @debate.description %>
+    </div>
+    <!-- Links for updating/posting an argument -->
 
-        <strong>Created by:</strong>
-        <%= @debate.user_id %>
-      </div>
-
-      <div class="col-md-6 bordered">
-          <strong>Description:</strong>
-          <%= @debate.description %>
-      </div>
-
+      <div class="row">
+        <div class="col-md-12">
+          <div class="btn btn-secondary">
+            <% if @debate.user == current_user %>
+            <%= link_to 'Change my debate topic', edit_debate_path(@debate), class: "btn btn-primary" %>
+            <% end %>
+            <%= link_to 'Back to debates', debates_path, class: "btn btn-primary" %>
+            <%= link_to 'For argument', pro_debate_submissions_path(@debate), class: "btn btn-primary" %>
+            <%= link_to 'Against argument', con_debate_submissions_path(@debate), class: "btn btn-primary" %>
+          </div>
+        </div>
     </div>
   </div>
-</div>
 
-<!-- Links for updating/posting an argument -->
-
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="btn btn-secondary bordered">
-        <%= link_to 'Change my debate topic', edit_debate_path(@debate), class: "btn btn-primary" %>
-        <%= link_to 'Back to debates', debates_path, class: "btn btn-primary" %>
-        <%= link_to 'For argument', pro_debate_submissions_path(@debate), class: "btn btn-primary" %>
-        <%= link_to 'Against argument', con_debate_submissions_path(@debate), class: "btn btn-primary" %>
-      </div>
-    </div>
-  </div>
 </div>
 
 <!-- Loop for the sub type pro column  -->
 
 <div class="container">
   <div class="row">
-    <div class="col-md-5 col-md-offset-1">
+    <div class="col-md-6">
       <% @pro_submissions.each do |sub| %>
-      <div class="submissioncard bordered <%= sub.sub_type %>">
-        <h3><%= sub.user.email %></h3>
-        <%= sub.content %>
+      <div class="submissioncard <%= sub.sub_type %>">
+        <div class=" submissionheader">
+        <h4><%= sub.user.email %></h4>
+        <span>Created at:<%=sub.created_at.strftime('%m/%d/%y at %l:%M %p') %></span>
+        </div>
+        <strong>Response:</strong> <%= sub.content %>
+        <button type="button" class="btn btn-primary btn-customer" name="button">Add to this response</button>
       </div>
       <% end %>
     </div>
 <!-- Loop for the sub type con column  -->
-    <div class="col-md-5">
+    <div class="col-md-6">
       <% @con_submissions.each do |sub| %>
-      <div class="submissioncard bordered <%= sub.sub_type %>">
-        <h3><%= sub.user.email %></h3>
-        <%= sub.content %>
+      <div class="submissioncard <%= sub.sub_type %>">
+        <div class=" submissionheader">
+        <h4><%= sub.user.email %></h4>
+        <span>Created at: <%=sub.created_at.strftime('%m/%d/%y at %l:%M %p') %></span>
+        </div>
+        <strong>Response:</strong> <%= sub.content %>
+        <button type="button" class="btn btn-primary btn-customer" name="button">Add to this response</button>
       </div>
       <% end %>
     </div>
