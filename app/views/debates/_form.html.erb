@@ -10,22 +10,34 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :topic %>
-    <%= f.text_field :topic %>
-  </div>
+<div class="container-fluid form-background">
+  <div class="row">
+    <div class="col-md-12">
+      <form class="form-horizontal" method="post">
+        <fieldset>
+          <legend class="text-center header">Start a new debate!</legend>
+            <div class="field">
+              <span><strong>Step 1.</strong>Describe the topic/question you want to talk about</span><br>
+              <%= f.label :topic %>
+              <%= f.text_field :topic %>
+            </div>
 
-  <div class="field">
-    <%= f.label :image %><br>
-    <%= f.file_field :image %>
-  </div>
+            <div class="field">
+              <span><strong>Step 2.</strong> Add an image or something you feel represents what you want to talk about</span><br>
+              <%= f.file_field :image %>
+            </div>
 
-  <div class="field">
-    <%= f.label :description %>
-    <%= f.text_area :description %>
-  </div>
+            <div class="field">
+            <strong>Step.3</strong> <%= f.label :description, 'Explain what the topic means. Define the key or important words in the topic.' %>
+              <%= f.text_area :description %>
+            </div>
 
-  <div class="actions">
-    <%= f.submit %>
+            <div class="">
+              <%= f.submit "Submit", :class => "btn btn-primary" %>
+            </div>
+          <% end %>
+        </form>
+      </fieldset>
+    </div>
   </div>
-<% end %>
+</div>

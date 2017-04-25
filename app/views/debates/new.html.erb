@@ -1,5 +1,9 @@
-<h1>New Debate</h1>
+<div class="container">
+<div class="row">
 
 <%= render 'form', debate: @debate, stance: @stance %>
+<%= link_to 'Back', debates_path, class: "btn btn-primary" %>
 
-<%= link_to 'Back', debates_path %>
+</div>
+
+</div>

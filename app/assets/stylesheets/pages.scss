@@ -2,8 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
-
 .header {
   color: #36A0FF;
   font-size: 27px;
@@ -16,18 +14,15 @@
 }
 
 .form-background {
-
+  background: #70C5CA;
+  background-color: #70C5CA;
   padding: 5%;
-  width: 40%;
+  width: 80%;
+  border-radius: 24px;
 }
-
 
 .header {
   color: #efa14c;
   font-size: 30px;
   padding: 10px;
-}
-
-.form-control {
-
 }

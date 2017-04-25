@@ -9,20 +9,27 @@
       </ul>
     </div>
   <% end %>
-<div class="container">
-  <div class="row submissioncontainer">
+
+
+<div class="container-fluid form-background">
+  <div class="row">
     <div class="col-md-12">
-      <div class="col-md-9 field submissionfield">
-        <%= f.label :content %>
-        <%= f.text_area :content %>
+      <form class="form-horizontal" method="post">
+        <fieldset>
+          <legend class="text-center header">You are answering for team <%= @submission.sub_type %> </legend>
+          <div class="field">
+            <span><strong>Remember to provide any references for any facts etc!</strong></span><br>
+            <%= f.text_area :content %>
+          </div>
+          <div class="field">
+            <%= f.hidden_field :sub_type, :value => submission.sub_type %>
+          </div>
+          <div class="col-md-3 actions">
+            <%= f.submit %>
+          </form>
+        </fieldset>
       </div>
-      <div class="field">
-        <%= f.hidden_field :sub_type, :value => submission.sub_type %>
-      </div>
-      <div class="col-md-3 actions">
-        <%= f.submit %>
-      </div>
+      <% end %>
     </div>
-  <% end %>
   </div>
 </div>
