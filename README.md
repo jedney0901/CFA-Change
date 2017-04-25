@@ -1,47 +1,73 @@
-# Welcome to Team Happy's Lets Get Git Hackathon concept and development README.
+# Welcome to my first draft of a political debate generator for my Coderfactory Assignment 2 concept and development README.
 
-This is a hackathon aimed at addressing issues that arise in education, we were given three options to choose from and two days to get everything ready to go.
+This app is in response to the brief presented to us based on the following criteria:
 
-***The issues we were presented with were:
+Your application must impress one person/group from this list:
+1. Barack Obama (politics)
+2. Rupert Murdoch (journalism)
+3. Bill & Melinda Gates (social causes/global development)
+Each person/group was chosen to represent a particular industry as well as certain expectations and standards.
 
-1. Poor access to tech education for disabled learners
+# Tools and methodologies
+1. Trello or similar project management tool to be used to track progress of build.
+2. Code review. Demonstrate that you have had your code reviewed by other students and that you have provided a code review for others.
+3. Github. Demonstrate use of frequent commits, pull requests, documentation.
+4. Use Agile development methodologies.
+5. Provide evidence you have used code quality tools (eg. Traceroute, Bullet, Brakeman, Rails Best Practices tool, RuboCop, RubyCritic, CodeClimate).
+6. Rails application code
+7. Demonstrate Ruby on Rails development skills.
+* = optional
+8. Create your application using Ruby on Rails.
+9. Demonstrate knowledge of Rails conventions.
+10. Use postgresql database in development.
+11. Use an API (eg. Omniauth, Geocoding, Maps, other..).
+12. Use appropriate gems.
+13. Use environmental variables to protect API keys etc.
+14. Implement a payment system for your product *
+15. Your app must send transactional emails (eg. using Mailgun).
+16. Your app should have an internal user messaging system.
+17. Your app will have some type of searching, sorting and or filtering capability.
+18. Your app will have some type of file uploading capability (eg. images).
+19. Your app will have authentication (eg. Devise, must have full functionality in place).
+20. Your app will have authorisation (users have restrictions on what they can see and edit).
+21. Your app will have an admin dashboard for the admin user to administrate the site.
+22. Document your application with a README that explains how to setup, configure and use your application.
+23. The core functionality of your application needs to be tested with Rspec.
 
-2. How do you know what you don’t know if self educating?
 
-3. Hard to accommodate both students who are struggling and excelling in a classroom***
+# INTRODUCTION - CHANGEAPP
 
-This README file explains our concepts, our project and the applications possible.
+ChangeApp is designed to do three core things to help the youth of today:
 
-# INTRODUCTION - VCR BACK TO THE FUTURE
+1. Identify where they sit on the political spectrum
 
-The Virtual Classroom Room is an application designed to help create a real life scenario for disabled or affected people to be able to interact and learn in a constructive environment. The idea behind this stems from the issue of helping people who are unable to participate in normal learning environments and creating a world where they are able to access classes based on different topics, teachers, scenarios to provide them an authentic VR learning experience where they are able to interact in real time with other students, courses and information.
+2. Be able to interact and discuss various political issues with other groups/individuals
+
+3. To be sharable amongst the community to help spread different opinions and sentiment in a comprehensive manner.
 
 
 # IDEATION
 
-There were a number of steps that we went through when determining our end concept for this project, the first being deciding what question we would address for this. To begin with, as a team we worked together to brainstorm ideas coming up with a minimum of 1 idea per question, the list of ideas we had are below:
+Working through the ideas for this project were pretty hard considering the areas that we had to look at developing for, especially as they aren't area's I have experience in. From the beginning I knew I wanted to do a political based app to help young people be able to have a platform which could enable them to share and discuss different topics in a safe and easy to navigate environment unlike social media platforms which can turn into mudslinging and bullying.
 
-1. ***Accomodating both students who are struggling and excelling in a classroom.***
-  * ***Seat Assignment App*** - The idea behind this was to come up with a way to assign a student his chair in the classroom based on a number of factors including their ability, their suitability and basic requirements.
+There were a lot of different features that I thoguht I could incorporate into this project and very quickly I realised that I was going to be biting off more than I could chew especially timeframes and experience. The core features that I wanted to include were:
 
-2. ***How do you know what you don't know if self educating.***
-  * ***VR Social App*** - Where you can connect with other people in your location who are self-learning the same languages or topic. You could organise meet ups or access a virtual class room which would allow you to discuss, trade and develop your education using informal self-learning channels. It would use a tiered structure where people who are further along are required to teach and help those below them in the learning process.
-  * ***VR Internship Simulator*** - Experience a set of simulations of what it's like to be working in a job as an x developer at x company.
-  * ***Online Course*** - set deadlines to complete content eg for each week.
+- Debate generator where people are able to contribute and build on each others responses.
+- UI where they can access and see a live feed of all new debates, their current debates and the last submissions on those debates.
+- API to Votecompass (An app which allows you to navigate and understand where you sit on the political spectrum based on where major parties are currently at.
+- Survey functionality where I would be able to send out large scale emails to the target audience and gather information around youth sentiments. This would be allow me to combine the data and present it back for analysis based on current policies.
+- News feed based on personal political preferences e.g. environmental, economic etc...
+- Incorporating analytics based around popularity of debates, comments, sentiment, political preferences.
+- Bibliographical checker API or potentially connect to the Polifacts API
 
-3.***Poor access to tech education for disabled learners***
-  * ***Virtual Classroom App*** - An app for those who are unable to leave their house or hospital. This    would give people who have access to VR headsets to
-  * ***Virtual Guide Dog - An app for the visually disabled*** - A virtual guide dog which helps you teach and navigate topics in a special way that addresses their needs.
-  * ***Social Community for disabled tech students*** - An app that connects people studying in the tech sector to try and build a wider community.
+There are a number of limitations around building an app like this which need to be taken into account especially based around how it would be deployed, how to make it as engaging as possible and how to make it scalable so that the analytics produced are strong enough. With the limited amount of time I decided to focus purely on being able to try and make it engaging through making it visually appealing and also see if I was able to get the basic functoinality down before moving onto the next stage and incorporating the more complex elements.
 
-
-We ended up choosing poor access as this was one which had a higher degree of difficulty and it's potential to be used in various types of scenarios with the aim of providing education to lots of niche audiences who are unable to access education at the moment. We envision that an application like this would be a fully accredited course which could then be heavily supported by government programs giving disability students better accessibility and funds for using a program such as this. The idea behind this would be also to extend this past just disability students and extending it to students of all types who either have non-physical disabilities or students who are looking for alternative learning experiences. The user stories that we developed for this idea were boiled down to very basic components we knew we would need to provide as an MVP product. The ability to build out functionality which would fall outside the MVP product are endless and opens up the ability for users to be able to access the wider tech community through one simple medium.
 
 # HOW WAS IT BUILT?
 
-For our project we using a ruby on rails structure utilising the sqlite DB framework that comes standard with new rails projects. When determining the actual structure of the site we used a few different things but the easiest way to lay it all out was using pen and paper to draw the application map assign the required functionality for each step of the way along with the gems required.
+For our project we using a ruby on rails structure utilising the postgresql framework so that we were able to deploy directly to heroku without any issues. As we are planning on deploying through Heroku we also must come up with a way which allows the app to access images and I decided to implement AWS S3 using Nick Whu's guide (Thanks mate). To determine my sitemap and actual App structure I used sketch to plan out all the pages I thought I would need and made a basic wireframe with a general idea of how my colour scheme would turn out but nothing set in stone. In the end, the only one I wasn't able to implement was the preferences page where they could select the type of news and articles they would want to review.
 
-Our site structure looks like as follows:
+My site structure looks like as follows:
 
 ![login register](https://cloud.githubusercontent.com/assets/25731546/24841758/9d352326-1dce-11e7-8621-a2b0778a1658.png)
 
