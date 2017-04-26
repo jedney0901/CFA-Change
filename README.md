@@ -81,12 +81,19 @@ For this project we used the following gems:
 ###My site structure looks like as follows:###
 
 ###Home Page###
+
 <img width="539" alt="changeapp" src="https://cloud.githubusercontent.com/assets/25731546/25408305/e2d6d2c4-2a50-11e7-85b4-e96bd351e9dd.png">
+
 ###Profile Page ###
+
 <img width="531" alt="changeapp-user" src="https://cloud.githubusercontent.com/assets/25731546/25408302/e2d5fa52-2a50-11e7-92d2-020a0a708a3c.png">
+
 ###Debate Page ###
+
 <img width="633" alt="changeapp-debate" src="https://cloud.githubusercontent.com/assets/25731546/25408304/e2d67874-2a50-11e7-816e-65400debd24b.png">
+
 ###Preferences Page###
+
 <img width="590" alt="changeapp- preferences" src="https://cloud.githubusercontent.com/assets/25731546/25408303/e2d650ec-2a50-11e7-8647-226aefe049e9.png">
 
 
@@ -118,6 +125,7 @@ The core purpose for implementing something like this would be to allow people f
 The vote compass API in  will be able to deliver large scale data which can truely reflect what the current population sentiments are through reviewing not only where they sit on the political scale, but also collating inbformation about public opinion through the content in debates and preferences.
 
 ### Google News API ### 
+
 Utilsing user preferences on what they are passionate about whether it be economic or environment, they would be able to access up to date articles from various sources and view information.
 
 This could include features such as:
