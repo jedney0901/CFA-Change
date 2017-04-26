@@ -81,17 +81,28 @@ For this project we used the following gems:
 2. Devise - Authentication
 3. Carrierwave - Photo and file upload
 4. Mini_magick - Required gem for Carrierwave
+5. Ransack
+6. Omniauth
+7. Rolify
+8. Pundit
 
 
-There were a few different factors that we needed to take into account when scoping out this idea, especially the fact that none of us were VR gurus with the capability of building a fully fledged Virtual Class Room. For the VR component we used A-Frame which is a framework which utilises JavaScript and basic HTML code to format and develop your ideas. The language is fairly intuitive but one of the things we noticed pretty quickly is that there are very limited tutorials and documentation to provide guidance. As we were using a fairly basic structure for our application we were able to allocate some resources to purely developing the VR scenarios which gave them time to understand and play around with the framework to come up with an MVP Solution. Using real life imagery and resources from our Coder Factory course, we were able to create a two step process for the users, the first being that they could land on a site and choose the topic/class that they were looking to join and the second being the actual VR classroom. The VR classroom incorporates a virtual teacher (Jamie), a blackboard which can use audio/video such as a screen record showing step throughs of their code courses and the ability to have a large scale amount of students accessing those resources from anywhere.
+The first major hurdle that I faced was the implementation of a based Debate template which I couldn then continue to change and adapt depdning on what the user requirements turned out to be. For my MVP the flow of the debate is:
+
+1. User created a debate and sets the topic/provides a description
+2. The user is then able to provide an argument for either For or Against and then wait for someone else to respond.
+3. There is a maxiumum of 6 rounds of the debate before it is finished.
+4. Other users are always able to update and add to the responses from previous submissions.
+
+There were a few things which weren't able to be complete implemented like the survey results per debate and the follow/unfollow element which would fit really well with the User Debate Interface that they all receive. These elements can be added in the next round of changes depending on feedback from the audience around the MVP product. There were a number of elements that I had to overcome for the debate interface including how I would assign the 'pro' and 'con' argument and how I would restrict the users depending on what they do. I managed to overcome this through creating a separate controller and directing them to two different new paths which would then allow me to do two separate loops and display the data on either side depending on the argument. This also gave me the ability to style and leave open the ability to incorporate different workflows as this progresses to the next stage in the future.
+
+Another part of this project which was a massive learning was around how devise gives you the ability to turn a registration into a profile. Instead of creating a separate scaffold and set of views you are able to use the edit registration path and manage all of your users various details and create a mini dashboard that is easy for them to use. This will be extremely handy in the future as a higher level of involvement and traffic occurs where they will be able to manage multiple debates, submissions and also be able to track their political identity with the VoteCompass API. In regards to the VoteCompass element, the more information the user posts up then we will be able to more accurately.
 
 For the development of the rest of the application, we came up with the structure as pictured above where there were 3 main user cases.
 
 - Users are able to create an account.
 - Each user has a profile which can upload a profile pictured
 - Each user can post and comment in a forum with their other classmates to be able to share information.
-
-This was a fairly simple structure to work with and it didn't really provide too many roadblocks during development. The only issue that we were having was including the profile picture for each different profile. Firstly we started off creating a migration which added a new column to the User mode, we wanted to save it to the User model because it could be used for multiple things tied to that user. It was only once we had fully implemented Carrierwave we noticed that there was a few issues when trying to access their User image through their profiles. The issue was that the image was being uploaded without a problem but it was unable to be saved directly to the User model due to an issue with bi-directional access**. As part of troubleshooting this issue, we ran through a series of alternatives but in the end the easiest and most functional way of doing it was to attach the profile image directly to their profile and access it through that.
 
 
 
