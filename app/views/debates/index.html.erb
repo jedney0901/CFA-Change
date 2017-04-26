@@ -37,9 +37,7 @@
         <% end %>
         <td class = "debatetable"><%= link_to debate.topic, debate_path(id: debate) %></td>
         <td class = "debatetable"><%= debate.description %></td>
-        <td class = "debatetable"><%= link_to 'Show', debate, class: "btn btn-primary" %></td>
-        <td class = "debatetable"><%= link_to 'Destroy', debate, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-
+        <td class = "debatetable"><%= link_to 'View this debate', debate, class: "btn btn-primary" %></td>
     </tr>
 
     <% end %>
