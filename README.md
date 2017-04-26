@@ -1,4 +1,4 @@
-# Welcome to my first draft of a political debate generator for my Coderfactory Assignment 2 concept and development README.
+# Welcome to my first draft of Change, the political debate generator for my Coderfactory Assignment 2 concept and development 
 
 This app is in response to the brief presented to us based on the following criteria:
 
