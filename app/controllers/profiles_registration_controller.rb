@@ -9,7 +9,8 @@ class ProfilesRegistrationController < Devise::RegistrationsController
   end
 
   def user_home(resource)
-    @debates = current_user.debates
-    @submissions = current_user.submissions
+    @debates = Debates.all
+    @submissions = Submissions.all
+    @users = Users.all
   end
 end
