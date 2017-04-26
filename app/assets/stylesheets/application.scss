@@ -22,7 +22,15 @@ body {
   margin-top: 100px;
   background: #70C5CA7;
   background-color: #f9f7f7;
+}
 
+input[type="file"] {
+    display: inline ;
+}
+
+
+.scrollbox {
+  overflow: scroll;
 }
 
 .header {
@@ -129,6 +137,7 @@ nav.navbar.shrink {
 .thumbnail {
   height: 75px;
   width: 100px;
+  display: inline;
 }
 
 .bordered {
@@ -173,9 +182,13 @@ nav.navbar.shrink {
   height: 500px;
 }
 
-.site-heading {
-  color: white;
+h1 {
+  color: #F8931F;
   text-align: center;
+  margin-top: 25%;
+  font-weight: bolder;
+  font-size: 80px;
+  font-weight: 900;
 }
 .main-image{
   height:auto;

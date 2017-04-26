@@ -25,6 +25,8 @@ gem 'omniauth'
 
 gem 'omniauth-facebook'
 
+gem 'fog'
+
 gem 'ransack'
 
 gem 'bootstrap-sass'

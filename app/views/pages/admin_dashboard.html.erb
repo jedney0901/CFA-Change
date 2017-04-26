@@ -30,23 +30,15 @@
           </tr>
         </thead>
         <tbody>
-          <% @debates.map(&:user).uniq.each do |debate| %>
 
-
-            <% @users.map().uniq.each do |user| %>
-            <% @submissions.map.uniq.each do |submission| %>
-
+            <% @users.each do |user| %>
                 <tr>
                   <td><%= user.email %></td>
                   <td><%= user.debates.count %></td>
-
-                  <td><%#= user.submission.count %></td>
+                  <td><%= user.submissions.count %></td>
                 </tr>
-            <% end %>
-           <% end %>
            <% end %>
         </tbody>
       </table>
     </div>
   </div>
-</div>
