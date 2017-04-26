@@ -55,7 +55,7 @@ There were a lot of different features that I thoguht I could incorporate into t
 - Debate generator where people are able to contribute and build on each others responses.
 - UI where they can access and see a live feed of all new debates, their current debates and the last submissions on those debates.
 - API to Votecompass (An app which allows you to navigate and understand where you sit on the political spectrum based on where major parties are currently at.
-- Survey functionality where I would be able to send out large scale emails to the target audience and gather information around youth sentiments. This would be allow me to combine the data and present it back for analysis based on current policies.
+- Survey functionality where I would be able to send out large scale emails and host surveys through the site to the target audience and gather information around youth sentiments. This would be allow me to combine the data and present it back for analysis based on current policies.
 - News feed based on personal political preferences e.g. environmental, economic etc...
 - Incorporating analytics based around popularity of debates, comments, sentiment, political preferences.
 - Bibliographical checker API or potentially connect to the Polifacts API
@@ -66,14 +66,6 @@ There are a number of limitations around building an app like this which need to
 # HOW WAS IT BUILT?
 
 For our project we using a ruby on rails structure utilising the postgresql framework so that we were able to deploy directly to heroku without any issues. As we are planning on deploying through Heroku we also must come up with a way which allows the app to access images and I decided to implement AWS S3 using Nick Whu's guide (Thanks mate). To determine my sitemap and actual App structure I used sketch to plan out all the pages I thought I would need and made a basic wireframe with a general idea of how my colour scheme would turn out but nothing set in stone. In the end, the only one I wasn't able to implement was the preferences page where they could select the type of news and articles they would want to review.
-
-My site structure looks like as follows:
-
-<img width="633" alt="changeapp-debate" src="https://cloud.githubusercontent.com/assets/25731546/25408304/e2d67874-2a50-11e7-816e-65400debd24b.png">
-<img width="590" alt="changeapp- preferences" src="https://cloud.githubusercontent.com/assets/25731546/25408303/e2d650ec-2a50-11e7-8647-226aefe049e9.png">
-<img width="531" alt="changeapp-user" src="https://cloud.githubusercontent.com/assets/25731546/25408302/e2d5fa52-2a50-11e7-92d2-020a0a708a3c.png">
-<img width="539" alt="changeapp" src="https://cloud.githubusercontent.com/assets/25731546/25408305/e2d6d2c4-2a50-11e7-85b4-e96bd351e9dd.png">
-
 
 For this project we used the following gems:
 
@@ -86,6 +78,17 @@ For this project we used the following gems:
 7. Rolify
 8. Pundit
 
+###My site structure looks like as follows:###
+
+###Home Page###
+<img width="539" alt="changeapp" src="https://cloud.githubusercontent.com/assets/25731546/25408305/e2d6d2c4-2a50-11e7-85b4-e96bd351e9dd.png">
+###Profile Page ###
+<img width="531" alt="changeapp-user" src="https://cloud.githubusercontent.com/assets/25731546/25408302/e2d5fa52-2a50-11e7-92d2-020a0a708a3c.png">
+###Debate Page ###
+<img width="633" alt="changeapp-debate" src="https://cloud.githubusercontent.com/assets/25731546/25408304/e2d67874-2a50-11e7-816e-65400debd24b.png">
+###Preferences Page###
+<img width="590" alt="changeapp- preferences" src="https://cloud.githubusercontent.com/assets/25731546/25408303/e2d650ec-2a50-11e7-8647-226aefe049e9.png">
+
 
 The first major hurdle that I faced was the implementation of a based Debate template which I couldn then continue to change and adapt depdning on what the user requirements turned out to be. For my MVP the flow of the debate is:
 
@@ -93,6 +96,9 @@ The first major hurdle that I faced was the implementation of a based Debate tem
 2. The user is then able to provide an argument for either For or Against and then wait for someone else to respond.
 3. There is a maxiumum of 6 rounds of the debate before it is finished.
 4. Other users are always able to update and add to the responses from previous submissions.
+5. Users are able to create an account.
+6. Each user has a profile which can upload a profile pictured
+7. Each user can post and comment in a forum with their other classmates to be able to share information.
 
 There were a few things which weren't able to be complete implemented like the survey results per debate and the follow/unfollow element which would fit really well with the User Debate Interface that they all receive. These elements can be added in the next round of changes depending on feedback from the audience around the MVP product. There were a number of elements that I had to overcome for the debate interface including how I would assign the 'pro' and 'con' argument and how I would restrict the users depending on what they do. I managed to overcome this through creating a separate controller and directing them to two different new paths which would then allow me to do two separate loops and display the data on either side depending on the argument. This also gave me the ability to style and leave open the ability to incorporate different workflows as this progresses to the next stage in the future.
 
@@ -100,18 +106,23 @@ Another part of this project which was a massive learning was around how devise 
 
 For the development of the rest of the application, we came up with the structure as pictured above where there were 3 main user cases.
 
-- Users are able to create an account.
-- Each user has a profile which can upload a profile pictured
-- Each user can post and comment in a forum with their other classmates to be able to share information.
 
+# THE FUTURE OF MY Change
 
+### Social Sharing ###
 
-# THE FUTURE OF VCR
+The core purpose for implementing something like this would be to allow people from different areas to colaborate and develop concepts ideas and be able to share these. The idea behind being able to contribute and add on to different elements will give people the ability 
 
-The development of this concept comes with the ability for significant growth as accessibility and funding become more available. Currently as our MVP product stands the application can accomodate Users need to be able to access an online classroom, a forum to access and share materials, and a way for them to interact with the wider tech community. If this product were to extend to the next stage then we would look at including other user stories such as:
+### Vote Compass API ###
 
-- Implementing better accessibility practices into our application.
-- Complete development of the classroom experience including any additional functionality our research would show they require.
-- Providing after class student areas where they can interact and share experiences like community areas and study rooms.
-- Ability to put up and share code snippets/resources directly in the virtual space, we would like to make this as visually compelling as possible.
-- Recording the teacher segments so they are able to alter and improve their teaching skills.
+The vote compass API in  will be able to deliver large scale data which can truely reflect what the current population sentiments are through reviewing not only where they sit on the political scale, but also collating inbformation about public opinion through the content in debates and preferences.
+
+### Google News API ### 
+Utilsing user preferences on what they are passionate about whether it be economic or environment, they would be able to access up to date articles from various sources and view information.
+
+This could include features such as:
+
+- Keyword association to filter types of news or events that they want to follow in the world.
+- Filtering of news sources that they want to keep and sources that they would like to avoid.
+- They could save news articles and use these as reference points in their debates/responses.
+
