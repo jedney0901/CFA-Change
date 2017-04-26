@@ -45,6 +45,10 @@ ChangeApp is designed to do three core things to help the youth of today:
 
 3. To be sharable amongst the community to help spread different opinions and sentiment in a comprehensive manner.
 
+# Trello Board 
+<img width="1298" alt="change trello" src="https://cloud.githubusercontent.com/assets/25731546/25416737/c60939fc-2a82-11e7-858b-0312d0f9bdc8.png">
+
+
 
 # IDEATION
 
