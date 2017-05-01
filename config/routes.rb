@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   root 'pages#home'
 
-  get 'contact', to: "pages#contact"
+  get 'contact', to: "contact#index"
   get 'admindashboard', to: "pages#admin_dashboard"
 
   devise_for :users, :controllers => {
