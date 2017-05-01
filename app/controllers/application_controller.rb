@@ -5,13 +5,14 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
 
+  # Method for setting the sign in path to omniauth with fb
   def after_sign_in_path_for(resource)
       request.env['omniauth.origin'] || root_path
   end
 
 protected
 
-
+# This is to update the profile image using carrierwave.
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:username, :email, :password,
       :password_confirmation, :remember_me, :image, :image_cache, :remove_image) }

@@ -42,6 +42,7 @@
             <% if @debate.user == current_user %>
             <%= link_to 'Change my debate topic', edit_debate_path(@debate), class: "btn btn-primary" %>
             <% end %>
+            <!-- Removes link to edit debate if it's not owned by the owner.  -->
             <%= link_to 'Back to debates', debates_path, class: "btn btn-primary" %>
             <%= link_to 'For argument', pro_debate_submissions_path(@debate), class: "btn btn-primary" %>
             <%= link_to 'Against argument', con_debate_submissions_path(@debate), class: "btn btn-primary" %>

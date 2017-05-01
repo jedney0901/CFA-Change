@@ -1,12 +1,16 @@
 class DebatesController < ApplicationController
   before_action :set_debate, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, :except => [:show, :index]
 
   # GET /debates
   # GET /debates.json
   def index
     @user = User.all
+    # Users can view all debates
     @search = Debate.search(params[:q])
+    # Seting up the search params
     @debates = @search.result
+    # For the search functionality above.
   end
 
   # GET /debates/1
@@ -26,6 +30,7 @@ class DebatesController < ApplicationController
 
   # GET /debates/1/edit
   def edit
+    @debate = current_user.debates.find(params[:id])
   end
 
   # POST /debates
